@@ -16,7 +16,9 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). 
+
+
+    # get user input for city (chicago, new york city, washington).
     city = input('ENTER THE CITY: ')
     while city not in ['chicago', 'new york city', 'washington']:
         city = input ("CHOOSE BETWEEN chicago, new york city OR washington: ").lower()
@@ -27,7 +29,7 @@ def get_filters():
     while month not in ['all','january', 'february', 'march', 'april', 'may', 'june']:
         month = input('ENTER MONTH january, february, ... , june : ').lower()
 
-    # get user input for day of week (all, monday, tuesday, ... , sunday)
+    # get user input for day of week (all, monday, tuesday, wednesdday,... , sunday)
     day = input('ENTER DAY : ').lower()
     while day not in ['all','monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
         day = input('ENTER DAY all, monday, ... , sunday : ').lower()
@@ -46,6 +48,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
+
     #load intended file into data frame
     df = pd.read_csv('{}.csv'.format(city))
 
