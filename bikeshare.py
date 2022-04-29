@@ -16,8 +16,6 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-
-
     # get user input for city (chicago, new york city, washington).
     city = input('ENTER THE CITY: ')
     while city not in ['chicago', 'new york city', 'washington']:
@@ -84,7 +82,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # display the most common month
+    # displays the most common month
     print("The most common month is: ", df['month'].value_counts().idxmax())
 
     # display the most common day of week
@@ -164,8 +162,8 @@ def user_stats(df,city):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def display_data(df):
-    """This allows users to be able to view  5 rows of data."""
+def display_raw_data(df):
+    """This allows users to view 5 rows of data."""
     print('press enter to see 5 row of data, press no to skip')
     start_loc = 0
     while (input()!= 'no'):
@@ -182,7 +180,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df,city)
-        display_data(df)
+        display_raw_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
